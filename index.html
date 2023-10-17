@@ -13,15 +13,10 @@
     <script>
       function captchaCallback(response){
         console.log('captchaCallback:');
-        if(typeof Captcha!=="undefined"){
-          // Captcha.postMessage(response);
-          console.log('Captcha!=="undefined":');
         window.flutter_inappwebview.callHandler('capcha_handler',response).then(function(result) {
               console.log('callHandler successfully:', result);
              });
              console.log('=================================================', response);
-      
-      }
     }
     </script>
 
