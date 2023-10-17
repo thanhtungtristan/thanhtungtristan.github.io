@@ -12,20 +12,25 @@
     </form>
     <script>
       function captchaCallback(response){
-        console.log('captchaCallback log response:', response);
-        if(typeof Captcha!=="undefined"){
-          // Captcha.postMessage(response);
-          console.log(' window.flutter_inappwebview.callHandler:');
-          window.flutter_inappwebview.callHandler('capcha_handler',response).then(function(result) {
-               console.log(result);
+ 
+        window.flutter_inappwebview.callHandler('capcha_handler',response).then(function(result) {
+
+              console.log('callHandler successfully:', result);
              });
-        }
-        window.addEventListener("flutterInAppWebViewPlatformReady", function(event) {
-          console.log(' window.addEventListener');
-             window.flutter_inappwebview.callHandler('capcha_handler',response).then(function(result) {
-               console.log(' window.flutter_inappwebview.callHandle : result');
-             });
-           });
+             console.log('window.flutter_inappwebview.callHandler:', response);
+
+        // console.log('captchaCallback log response:', response);
+        // if(typeof Captcha!=="undefined"){
+        //   // Captcha.postMessage(response);
+        //   console.log(' window.flutter_inappwebview.callHandler:');
+         
+        // }
+        // window.addEventListener("flutterInAppWebViewPlatformReady", function(event) {
+        //   console.log(' window.addEventListener');
+        //      window.flutter_inappwebview.callHandler('capcha_handler',response).then(function(result) {
+        //        console.log(' window.flutter_inappwebview.callHandle : result');
+        //      });
+        //    });
       }
     </script>
 
