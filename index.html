@@ -12,9 +12,15 @@
     </form>
     <script>
       function captchaCallback(response){
-        if(typeof Captcha!=="undefined"){
-          Captcha.postMessage(response);
-        }
+        // if(typeof Captcha!=="undefined"){
+        //   Captcha.postMessage(response);
+        // }
+        window.addEventListener("Capcha", function(event) {
+             window.flutter_inappwebview.callHandler('capcha_chandler',response).then(function(result) {
+               // get result from Flutter side. It will be the number 64.
+               console.log(result);
+             });
+           });
       }
     </script>
   </body>
