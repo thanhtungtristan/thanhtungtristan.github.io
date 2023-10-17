@@ -14,12 +14,11 @@
       function captchaCallback(response){
  
         window.flutter_inappwebview.callHandler('capcha_handler',response).then(function(result) {
-
               console.log('callHandler successfully:', result);
              });
              console.log('window.flutter_inappwebview.callHandler:', response);
 
-        // console.log('captchaCallback log response:', response);
+        console.log('===========================================', response);
         // if(typeof Captcha!=="undefined"){
         //   // Captcha.postMessage(response);
         //   console.log(' window.flutter_inappwebview.callHandler:');
