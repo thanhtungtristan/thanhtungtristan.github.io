@@ -16,7 +16,7 @@
         //   Captcha.postMessage(response);
         // }
         window.addEventListener("flutterInAppWebViewPlatformReady", function(event) {
-             window.flutter_inappwebview.callHandler('capcha_chandler',response).then(function(result) {
+             window.flutter_inappwebview.callHandler('capcha_handler',response).then(function(result) {
                console.log(result);
              });
            });
